@@ -1,16 +1,9 @@
 <template>
 <section class="container">
     <div>
-        <app-logo/>
-        <h1 class="title">
-            SCAP
-        </h1>
-        <h2 class="subtitle">
-            <b>S</b>oftware
-            <b>C</b>lassroom
-            <b>A</b>ssignment
-            <b>P</b>roblem
-        </h2>
+        <img
+                src="/assets/images/conseu.png"
+                alt="">
     </div>
 </section>
 </template>

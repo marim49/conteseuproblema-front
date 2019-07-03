@@ -54,42 +54,29 @@
                         tag="li">
                         <a>
                             <i class="icon-atom2"></i>
-                            <span>Ensalamento</span>
+                            <span>Criar desafio</span>
                         </a>
                     </router-link>
                     <router-link to="/salas"
                         tag="li">
                         <a>
                             <i class="icon-comment-discussion"></i>
-                            <span>Salas</span>
+                            <span>Visualizar desafios</span>
+                        </a>
+                    </router-link>
+                    
+                    <router-link to="/disciplinas"
+                        tag="li">
+                        <a>
+                            <i class="icon-books"></i>
+                            <span>Visualizar ranking</span>
                         </a>
                     </router-link>
                     <router-link to="/turmas"
                         tag="li">
                         <a>
                             <i class="icon-brain"></i>
-                            <span>Turmas</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/disciplinas"
-                        tag="li">
-                        <a>
-                            <i class="icon-books"></i>
-                            <span>Disciplinas</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/professores"
-                        tag="li">
-                        <a>
-                            <i class=" icon-cup2"></i>
-                            <span>Professores</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/horario"
-                        tag="li">
-                        <a>
-                            <i class=" icon-stairs"></i>
-                            <span>Grade de horário</span>
+                            <span>Perfil</span>
                         </a>
                     </router-link>
                 <!--

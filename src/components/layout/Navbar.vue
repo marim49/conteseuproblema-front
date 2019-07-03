@@ -4,9 +4,9 @@
         <a class="navbar-brand"
             href="index.html">
             <img class="silas-logo"
-                src="/assets/images/scap_logo.png"
+                src="/assets/images/conseu.png"
                 alt="">
-            <div class="silas-description">Software Classroom Assignment Problem</div>
+            <div class="silas-description">Conte seu problema</div>
         </a>
 
         <ul class="nav navbar-nav visible-xs-block">
