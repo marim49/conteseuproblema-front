@@ -83,7 +83,7 @@
                         <span>Não tem uma conta?</span>
                     </div>
                     <a class="btn bg-slate btn-block btn-lg content-group"
-                        @click="cadastra">Cadastrar</a>
+                        @click="cadastrar_user">Cadastrar</a>
                     <span class="help-block text-center">Se continuar, você estará confirmando que você leu e aceitou os nossos
                         <a href="#">Termos e condições</a> e a nossa
                         <a href="#">Política de privacidade</a>
@@ -118,15 +118,15 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['login']),
+        ...mapActions(['login', 'cadastrar_usuario']),
         async logar() {
             let { data } = await axios.post('/api/acesso/logar', { cpf: this.cpf, password: this.password })
             localStorage.setItem('token', data)
             this.login(data)
         },
-        cadastra() {
+        cadastrar_user() {
             console.log('chamou')
-            return this.cadastrar === 1
+            this.cadastrar_usuario()
         }
     }
 }

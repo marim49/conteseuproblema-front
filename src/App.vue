@@ -16,7 +16,7 @@
                     <!-- /main content -->
                 </div>
                 <div class="page-content"
-                    v-else-if="teste">
+                    v-else-if="logar">
                     <div class="content-wrapper">
                         <logar></logar>
 
@@ -50,7 +50,7 @@
                     <!-- /main content -->
                 </div>
                 <div class="page-content"
-                    v-else-if="teste">
+                    v-else-if="logar">
                     <div class="content-wrapper">
                         <logar></logar>
 
@@ -91,12 +91,10 @@ export default {
     data() {
         return {
 
-            teste: true,
-            cadastro: false
 
         }
     },
     components: { navbar, sidebar, spinner, Logar, cadastro, recupera },
-    computed: mapState(['token']),
+    computed: mapState(['token', 'logar', 'cadastro']),
 }
 </script>

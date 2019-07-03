@@ -137,6 +137,12 @@
                         class="btn bg-teal btn-block btn-lg">Criar conta
                         <i class="icon-circle-right2 position-right"></i>
                     </a>
+                    <a type="submit"
+                        @click="logar"
+                        class="btn bg-teal btn-block btn-lg">
+                        <i class="icon-circle-left2 position-left"></i>
+                           Voltar
+                    </a>
                 </div>
             </form>
 
@@ -145,6 +151,7 @@
 </template>
 <script>
 import axios from 'axios'
+import { mapActions } from 'vuex'
 
 export default {
     data() {
@@ -158,6 +165,7 @@ export default {
         }
     },
     methods: {
+        ...mapActions(['logar_usuario']),
         cadastra() {
             console.log('oi')
             axios.post('/api/acesso/cadastrar', {
@@ -169,6 +177,10 @@ export default {
                 password: this.password,
 
             })
+        },
+
+        logar(){
+            this.logar_usuario()
         }
     }
 }

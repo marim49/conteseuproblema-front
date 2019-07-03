@@ -7,7 +7,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         loading: false,
-        token: null
+        token: null,
+        cadastro: null,
+        logar: true
     },
     getters: {
         loading(state) { return state.loading },
@@ -21,9 +23,13 @@ export default new Vuex.Store({
         },
         logout({ commit }) {
             commit('LOGOUT')
-        }
+        },
+        cadastrar_usuario(context) { context.commit('CADASTRAR') },
+        logar_usuario(context) {context.commit('LOGAR')}
     },
     mutations: {
+        LOGAR(state) {state.logar = true, state.cadastro = false},
+        CADASTRAR (state) {state.cadastro = true, state.logar = false},
         SHOW_LOADING(state) { state.loading = true },
         HIDE_LOADING(state) { state.loading = false },
         LOGIN(state, token) {
