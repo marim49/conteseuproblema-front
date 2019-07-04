@@ -84,7 +84,6 @@ import spinner from '@/components/layout/Spinner'
 import Logar from '@/views/acesso/logar'
 import cadastro from '@/views/acesso/cadastrar'
 import recupera from '@/views/acesso/recuperar'
-
 import { mapState } from 'vuex'
 
 export default {

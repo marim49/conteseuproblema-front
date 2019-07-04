@@ -18,15 +18,26 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Código</th>
-                                <th>Descrição</th>
+                                <th>Nome desafio</th>
+                                <th>prazo final</th>
+                                <th>prêmio</th>
+                                <th style="text-align: center;">Opções</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="linha in tabela"
                                 :key="linha.id">
-                                <td>{{ linha.codigo }}</td>
-                                <td>{{ linha.descricao }}</td>
+                                <td>{{ linha.nome }}</td>
+                                <td>{{ linha.prazo | formatDate }}</td>
+                                <td>{{ linha.premio }}</td>
+                                <td><div style="text-align: center; vertical-align: middle" class="align-middle">
+                                       <div class="btn-group btn-group-lg" role="group" aria-label="Ações">
+                                           <a class="btn btn-info" role="button"></a>
+                                           <a class="btn btn-primary" role="button"></a>
+                                           <a class="btn btn-danger" role="button"></a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

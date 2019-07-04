@@ -10,7 +10,7 @@
             <fieldset class="content-group">
               <legend class="text-semibold">Informações</legend>
 
-              <control-wrapper label="desafio:">
+              <control-wrapper label="Nome:">
                 <input
                   type="text"
                   class="form-control"
@@ -18,20 +18,44 @@
                   v-model="nome_desafio"
                 >
               </control-wrapper>
-              <control-wrapper label="Código:">
+              <control-wrapper label="Setor:">
+                <select
+                  class="form-control"
+                  v-model="setor"
+                >
+                <option value="desenvolvimento">Desenvolvimento</option>
+                </select>
+              </control-wrapper>
+              <control-wrapper label="Regras:">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Insira o código da disciplina"
-                  v-model="codigo"
+                  placeholder="Insira aqui as regras necessários para o desafio"
+                  v-model="regras"
                 >
               </control-wrapper>
-              <control-wrapper label="requisitos:">
-                <input
+              <control-wrapper label="Requisitos:">
+                <textarea
                   type="textarea"
                   class="form-control"
-                  placeholder="Insira o código da disciplina"
-                  v-model="codigo"
+                  placeholder="Insira aqui os requisitos necessários para o desafio"
+                  v-model="requisitos"
+                ></textarea>
+              </control-wrapper>
+              <control-wrapper label="Prêmio:">
+                <textarea
+                  type="textarea"
+                  class="form-control"
+                  placeholder="Insira aqui o prêmio para o desafio"
+                  v-model="premio"
+                ></textarea>
+              </control-wrapper>
+              <control-wrapper label="Data expiração:">
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="Insira aqui as regras necessários para o desafio"
+                  v-model="data_expiracao"
                 >
               </control-wrapper>
             </fieldset>
@@ -55,8 +79,12 @@ import PNotify from 'pnotify/dist/es/PNotify'
 export default {
     data(){
         return{
-            descricao: null,
-            codigo: null,
+            nome_desafio: null,
+            setor: null,
+            regras: null,
+            requisitos: null,
+            premio: null,
+            data_expiracao: null
         } 
     },
     methods: {
