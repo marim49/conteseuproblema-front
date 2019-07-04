@@ -50,7 +50,7 @@
                         </a>
                     </router-link>
 
-                    <router-link to="/ensalamento"
+                    <router-link to="/desafios"
                         tag="li">
                         <a>
                             <i class="icon-atom2"></i>
@@ -65,7 +65,7 @@
                         </a>
                     </router-link>
                     
-                    <router-link to="/disciplinas"
+                    <router-link to="/diplinas"
                         tag="li">
                         <a>
                             <i class="icon-books"></i>

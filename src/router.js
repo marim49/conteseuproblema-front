@@ -19,8 +19,8 @@ export default new Router({
             component: require('@/views/Inicio').default,
         },
         {
-            path: '/disciplinas',
-            component: require('@/views/disciplina/Index').default,
+            path: '/desafios',
+            component: require('@/views/desafio/Index').default,
         },
         {
             path: '/ensalamento',
@@ -39,8 +39,8 @@ export default new Router({
             component: require('@/views/turma/Index').default,
         },  
         {
-            path: '/cadastro/disciplina',
-            component: require('@/views/disciplina/Novo').default
+            path: '/cadastro/desafio',
+            component: require('@/views/desafio/Novo').default
         }, 
         {
             path: '/cadastro/professor',
