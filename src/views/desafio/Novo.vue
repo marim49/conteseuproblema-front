@@ -102,17 +102,15 @@ export default {
                 
             }
             console.log(saveData)
-            // console.log(saveData)
             try {
-                await axios.post('/api/disciplina/create', saveData)
-                .then(function(resp){
-                  PNotify.success('Registro salvo com sucesso')
-                  this.$router.push('/cadastro/empreendimento')
-                })
-                .catch(function(err){
-                  PNotify.error(data.message)
-                  this.hideLoading()
-                })
+                let { data }  = await axios.post('/api/disciplina/create', saveData)
+                if (data.success) {
+                    this.$router.push('/desafios')
+                } else {
+                    console.log('error')
+                    PNotify.error(data.message)
+                    this.hideLoading()
+                }
             } catch (err) {
                 console.log(err)
                 PNotify.error('Erro ao salvar os dados')

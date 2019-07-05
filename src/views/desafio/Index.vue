@@ -31,10 +31,10 @@
                                 <td>{{ linha.prazo | formatDate }}</td>
                                 <td>{{ linha.premio }}</td>
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
-                                       <div class="btn-group btn-group-lg" role="group" aria-label="Ações">
-                                           <a class="btn btn-info" role="button"></a>
-                                           <a class="btn btn-primary" role="button"></a>
-                                           <a class="btn btn-danger" role="button"></a>
+                                       <div class="btn-group btn-group-sm" role="group" aria-label="Ações">
+                                           <a class="btn btn-info icon-file-eye2" role="button"> </a>
+                                           <a class="btn btn-primary icon-pencil5" role="button"></a>
+                                           <a class="btn btn-danger icon-cancel-circle2" role="button"></a>
                                         </div>
                                     </div>
                                 </td>

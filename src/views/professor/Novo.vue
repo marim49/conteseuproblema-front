@@ -72,12 +72,14 @@ export default {
             console.log(saveData)
             // console.log(saveData)
             try {
-                let { data } = await axios.post('/api/disciplina/create', saveData)
-                // console.log(data)
+                let  data  = await axios.post('/api/disciplina/create', saveData)
+                console.log('data',data)
                 if (data.success) {
+                  console.log('oi')
                     PNotify.success('Registro salvo com sucesso')
-                    this.$router.push('/cadastro/empreendimento')
+                    this.$router.push('/desafios')
                 } else {
+                    console.log('error')
                     PNotify.error(data.message)
                     this.hideLoading()
                 }
