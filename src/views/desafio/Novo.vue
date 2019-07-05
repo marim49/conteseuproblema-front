@@ -75,6 +75,7 @@
 <script>
 import axios from 'axios'
 import PNotify from 'pnotify/dist/es/PNotify'
+import moment from 'moment'
 
 export default {
     data(){
@@ -90,22 +91,28 @@ export default {
     methods: {
         async save() {
             let saveData = {
-                descricao: this.descricao,
-                codigo: this.codigo
+                nome_desafio: this.nome_desafio,
+                setor: this.setor,
+                regras: this.regras,
+                requisitos: this.requisitos,
+                premio: this.premio,
+                data_expiracao: this.data_expiracao,
+                data_criacao: new Date().toJSON().slice(0, 10)
+
                 
             }
             console.log(saveData)
             // console.log(saveData)
             try {
-                let { data } = await axios.post('/api/disciplina/create', saveData)
-                // console.log(data)
-                if (data.success) {
-                    PNotify.success('Registro salvo com sucesso')
-                    this.$router.push('/cadastro/empreendimento')
-                } else {
-                    PNotify.error(data.message)
-                    this.hideLoading()
-                }
+                await axios.post('/api/disciplina/create', saveData)
+                .then(function(resp){
+                  PNotify.success('Registro salvo com sucesso')
+                  this.$router.push('/cadastro/empreendimento')
+                })
+                .catch(function(err){
+                  PNotify.error(data.message)
+                  this.hideLoading()
+                })
             } catch (err) {
                 console.log(err)
                 PNotify.error('Erro ao salvar os dados')

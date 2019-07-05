@@ -12,7 +12,7 @@ import moment from 'moment'
 Vue.config.productionTip = false
 Vue.filter('formatDate', function(value) {
   if (value) {
-    return  moment(String(value)).locale('pt-br').format('MM/DD/YYYY hh:mm')
+    return  moment(String(value)).locale('pt-br').format('DD/MM/YYYY')
   }
 });
 
