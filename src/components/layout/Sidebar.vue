@@ -79,6 +79,13 @@
                             <span>Perfil</span>
                         </a>
                     </router-link>
+                    <router-link to="/desafios/inscrever"
+                        tag="li">
+                        <a>
+                            <i class="icon-brain"></i>
+                            <span>inscrever em desafio</span>
+                        </a>
+                    </router-link>
                 <!--
                     <li>
                         <a href="#">

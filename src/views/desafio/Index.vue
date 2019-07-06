@@ -4,7 +4,7 @@
         <span class="text-semibold">Desafios</span>
         <div slot="heading-elements"
             class="heading-btn-group">
-            <router-link to="/cadastro/desafio"
+            <router-link to="/desafios/cadastro"
                 class="btn btn-primary">
                 <i class="icon-books position-left"></i>
                 <span>Cadastrar desafio</span>
@@ -34,7 +34,7 @@
                                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações">
                                            <a class="btn btn-info icon-file-eye2" role="button"> </a>
                                            <a class="btn btn-primary icon-pencil5" role="button"></a>
-                                           <a class="btn btn-danger icon-cancel-circle2" role="button"></a>
+                                           <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button"></button>
                                         </div>
                                     </div>
                                 </td>
@@ -47,7 +47,6 @@
     </div>
 </div>
 </template>
-
 <script>
 import axios from 'axios'
 import PNotify from 'pnotify/dist/es/PNotify'
@@ -61,7 +60,7 @@ export default {
     async created() {
         try {
             this.showLoading()
-            let { data } = await axios.get('/api/disciplina/disciplina')
+            let { data } = await axios.get('/api/desafio/list')
             this.tabela = data
         } catch (err) {
             PNotify.error('Erro ao obter dados do servidor. Tente novamente mais tarde.')

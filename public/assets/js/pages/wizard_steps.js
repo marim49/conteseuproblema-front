@@ -22,10 +22,10 @@ $(function() {
         transitionEffect: "fade",
         titleTemplate: '<span class="number">#index#</span> #title#',
         labels: {
-            finish: 'Submit'
+            finish: 'Enviar'
         },
         onFinished: function (event, currentIndex) {
-            alert("Form submitted.");
+            alert("Informações enviadas.");
         }
     });
 
@@ -37,7 +37,7 @@ $(function() {
         transitionEffect: "fade",
         titleTemplate: '<span class="number">#index#</span> #title#',
         labels: {
-            finish: 'Submit'
+            finish: 'Enviar'
         },
         onContentLoaded: function (event, currentIndex) {
             $(this).find('select.select').select2();
@@ -55,7 +55,7 @@ $(function() {
             });
         },
         onFinished: function (event, currentIndex) {
-            alert("Form submitted.");
+            alert("Informações enviadas.");
         }
     });
 

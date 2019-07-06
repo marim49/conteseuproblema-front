@@ -103,7 +103,7 @@ export default {
             }
             console.log(saveData)
             try {
-                let { data }  = await axios.post('/api/disciplina/create', saveData)
+                let { data }  = await axios.post('/api/desafio/create', saveData)
                 if (data.success) {
                     this.$router.push('/desafios')
                 } else {
