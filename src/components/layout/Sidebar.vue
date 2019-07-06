@@ -72,7 +72,7 @@
                             <span>Visualizar ranking</span>
                         </a>
                     </router-link>
-                    <router-link to="/turmas"
+                    <router-link to="/perfil/solucionador"
                         tag="li">
                         <a>
                             <i class="icon-brain"></i>

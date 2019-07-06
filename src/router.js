@@ -50,6 +50,14 @@ export default new Router({
             path: '/cadastro/professor',
             component: require('@/views/professor/Novo').default
         }, 
+        {
+            path: '/perfil/empresa',
+            component: require('@/views/perfil/Empresa').default
+        }, 
+        {
+            path: '/perfil/solucionador',
+            component: require('@/views/perfil/Solucionador').default
+        }, 
 
     ],
 })
