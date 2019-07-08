@@ -49,43 +49,50 @@
                             <span>Início</span>
                         </a>
                     </router-link>
-
-                    <router-link to="/desafios"
+                    <router-link to="/desafios/inscrever"
                         tag="li">
                         <a>
-                            <i class="icon-atom2"></i>
-                            <span>Criar desafio</span>
+                            <i class="icon-users4"></i>
+                            <span>inscrever em desafio - S</span>
                         </a>
                     </router-link>
-                    <router-link to="/salas"
+                    <router-link to="/desafios/empresa"
                         tag="li">
                         <a>
-                            <i class="icon-comment-discussion"></i>
-                            <span>Visualizar desafios</span>
+                            <i class="icon-puzzle3"></i>
+                            <span>Visualizar desafios - E</span>
+                        </a>
+                    </router-link>
+                    <router-link to="/desafios/solucionador"
+                        tag="li">
+                        <a>
+                            <i class=" icon-puzzle"></i>
+                            <span>Visualizar desafios - S</span>
                         </a>
                     </router-link>
                     
-                    <router-link to="/diplinas"
+                    <router-link to="/empresa/rank"
                         tag="li">
                         <a>
-                            <i class="icon-books"></i>
-                            <span>Visualizar ranking</span>
+                            <i class="icon-medal"></i>
+                            <span>Visualizar ranking - S</span>
+                        </a>
+                    </router-link>
+                    <router-link to="/solucionador/rank"
+                        tag="li">
+                        <a>
+                            <i class="icon-podium"></i>
+                            <span>Visualizar ranking - E</span>
                         </a>
                     </router-link>
                     <router-link to="/perfil/solucionador"
                         tag="li">
                         <a>
                             <i class="icon-brain"></i>
-                            <span>Perfil</span>
+                            <span>Perfil - S</span>
                         </a>
                     </router-link>
-                    <router-link to="/desafios/inscrever"
-                        tag="li">
-                        <a>
-                            <i class="icon-brain"></i>
-                            <span>inscrever em desafio</span>
-                        </a>
-                    </router-link>
+                    
                 <!--
                     <li>
                         <a href="#">

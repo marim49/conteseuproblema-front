@@ -6,7 +6,7 @@
             class="heading-btn-group">
             <router-link to="/desafios/cadastro"
                 class="btn btn-primary">
-                <i class="icon-books position-left"></i>
+                <i class=" icon-atom2 position-left"></i>
                 <span>Cadastrar desafio</span>
             </router-link>
         </div>

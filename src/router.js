@@ -19,8 +19,12 @@ export default new Router({
             component: require('@/views/Inicio').default,
         },
         {
-            path: '/desafios',
-            component: require('@/views/desafio/Index').default,
+            path: '/desafios/solucionador',
+            component: require('@/views/desafio/Solucionador').default,
+        },
+        {
+            path: '/desafios/empresa',
+            component: require('@/views/desafio/Empresa').default,
         },
         {
             path: '/desafios/cadastro',
@@ -29,6 +33,22 @@ export default new Router({
         {
             path: '/desafios/inscrever',
             component: require('@/views/desafio/Inscrever').default
+        },
+        {
+            path: '/perfil/empresa',
+            component: require('@/views/perfil/Empresa').default
+        }, 
+        {
+            path: '/perfil/solucionador',
+            component: require('@/views/perfil/Solucionador').default
+        }, 
+        {
+            path: '/empresa/rank',
+            component: require('@/views/ranking/Empresa').default
+        },
+        {
+            path: '/solucionador/rank',
+            component: require('@/views/ranking/Solucionador').default
         },
         {
             path: '/ensalamento',
@@ -50,14 +70,7 @@ export default new Router({
             path: '/cadastro/professor',
             component: require('@/views/professor/Novo').default
         }, 
-        {
-            path: '/perfil/empresa',
-            component: require('@/views/perfil/Empresa').default
-        }, 
-        {
-            path: '/perfil/solucionador',
-            component: require('@/views/perfil/Solucionador').default
-        }, 
+        
 
     ],
 })
