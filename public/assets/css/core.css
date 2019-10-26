@@ -497,8 +497,9 @@ a.bg-danger:focus {
 }
 .page-header-content {
   position: relative;
-  background-color: inherit;
-  padding: 0 20px;
+  background: rgb(240,196,109);
+background: linear-gradient(90deg, rgba(240,196,109,1) 78%, rgba(244,133,7,0.9951330874146533) 100%);
+border-color: linear-gradient(90deg, rgba(240,196,109,1) 78%, rgba(244,133,7,0.9951330874146533) 100%);
 }
 .page-header-content[class*=border-bottom-] + .breadcrumb-line {
   border-top: 0;
