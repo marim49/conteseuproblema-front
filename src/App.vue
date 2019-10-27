@@ -10,7 +10,7 @@
                     v-if="token">
                     <sidebar></sidebar>
                     <!-- Main content -->
-                    <div class="content-wrapper">
+                    <div class="content-wrapper fundo-laranja">
                         <router-view/>
                     </div>
                     <!-- /main content -->

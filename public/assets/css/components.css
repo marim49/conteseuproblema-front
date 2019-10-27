@@ -20548,3 +20548,8 @@ label.display-block {
     padding-bottom: 10px;
   }
 }
+
+.fundo-laranja {
+  background: rgb(240,196,109);
+background: linear-gradient(90deg, rgba(240,196,109,1) 78%, rgba(244,133,7,0.9951330874146533) 100%);
+}

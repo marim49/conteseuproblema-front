@@ -6,7 +6,7 @@
             <img class="silas-logo"
                 src="/assets/images/conseu.png"
                 alt="">
-            <div class="silas-description">Conte seu problema</div>
+            <div class="silas-description">!nova¡</div>
         </a>
 
         <ul class="nav navbar-nav visible-xs-block">
@@ -31,7 +31,7 @@
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle"
                     data-toggle="dropdown">
-                    <img src="/assets/images/placeholder.jpg"
+                    <img src="/assets/images/leandro_modelo.jpeg"
                         alt="">
                     <span>Leandro</span>
                     <i class="caret"></i>

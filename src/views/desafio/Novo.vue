@@ -26,21 +26,21 @@
                 <option value="desenvolvimento">Desenvolvimento</option>
                 </select>
               </control-wrapper>
-              <control-wrapper label="Regras:">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Insira aqui as regras necessários para o desafio"
-                  v-model="regras"
-                >
-              </control-wrapper>
-              <control-wrapper label="Requisitos:">
+              <control-wrapper label="Descrição do desafio:">
                 <textarea
                   type="textarea"
                   class="form-control"
-                  placeholder="Insira aqui os requisitos necessários para o desafio"
+                  placeholder="Insira aqui toda a informação referente ao desafio para que possa ser solucionado"
                   v-model="requisitos"
                 ></textarea>
+              </control-wrapper>
+              <control-wrapper label="Tipo de prêmio:">
+                <select
+                  class="form-control"
+                >
+                <option value="1">Dinheiro</option>
+                <option value="2">Emprego</option>
+                </select>
               </control-wrapper>
               <control-wrapper label="Prêmio:">
                 <textarea
@@ -60,7 +60,7 @@
               </control-wrapper>
             </fieldset>
             <div class="text-right">
-              <a @click="save" class="btn btn-primary">
+              <a @click="save" class="btn btn-success">
                 Salvar
                 <i class="icon-arrow-right14 position-right"></i>
               </a>

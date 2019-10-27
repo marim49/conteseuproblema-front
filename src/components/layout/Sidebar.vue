@@ -2,42 +2,12 @@
 <!-- Main sidebar -->
 <div class="sidebar sidebar-main sidebar-fixed">
     <div class="sidebar-content">
-        <!-- User menu -->
-        <div class="sidebar-user">
-            <div class="category-content">
-                <div class="media">
-                    <a href="#"
-                        class="media-left">
-                        <img src="/assets/images/placeholder.jpg"
-                            class="img-circle img-sm"
-                            alt="">
-                    </a>
-                    <div class="media-body">
-                        <span class="media-heading text-semibold">Leandro Marim</span>
-                        <div class="text-size-mini text-muted">
-                            <i class="icon-pin text-size-small"></i> &nbsp;Belo Horizonte, MG
-                        </div>
-                    </div>
-                    <div class="media-right media-middle">
-                        <ul class="icons-list">
-                            <li>
-                                <a href="#">
-                                    <i class="icon-cog3"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /user menu -->
         <!-- Main navigation -->
         <div class="sidebar-category sidebar-category-visible">
             <div class="category-content no-padding">
                 <ul class="navigation navigation-main navigation-accordion">
                     <!-- Main -->
                     <li class="navigation-header">
-                        <span>Selecione</span>
                         <i class="icon-menu"
                             title="Main pages"></i>
                     </li>
@@ -49,47 +19,54 @@
                             <span>Início</span>
                         </a>
                     </router-link>
-                    <router-link to="/desafios/inscrever"
+                    <!-- <router-link to="/desafios/inscrever"
                         tag="li">
                         <a>
                             <i class="icon-users4"></i>
                             <span>inscrever em desafio - S</span>
                         </a>
-                    </router-link>
+                    </router-link> -->
                     <router-link to="/desafios/empresa"
                         tag="li">
                         <a>
-                            <i class="icon-puzzle3"></i>
-                            <span>Visualizar desafios - E</span>
+                            <i class="icon-puzzle"></i>
+                            <span>Desafios</span>
                         </a>
                     </router-link>
-                    <router-link to="/desafios/solucionador"
+                    <!-- <router-link to="/desafios/solucionador"
                         tag="li">
                         <a>
                             <i class=" icon-puzzle"></i>
                             <span>Visualizar desafios - S</span>
                         </a>
-                    </router-link>
+                    </router-link> -->
                     
-                    <router-link to="/empresa/rank"
+                    <!-- <router-link to="/empresa/rank"
                         tag="li">
                         <a>
                             <i class="icon-medal"></i>
                             <span>Visualizar ranking - S</span>
+                        </a>
+                    </router-link> -->
+                    <router-link to="/perfil/solucionador"
+                        tag="li">
+                        <a>
+                            <i class="icon-trophy3"></i>
+                            <span>Premiações</span>
                         </a>
                     </router-link>
                     <router-link to="/solucionador/rank"
                         tag="li">
                         <a>
                             <i class="icon-podium"></i>
-                            <span>Visualizar ranking - E</span>
+                            <span>Ranking</span>
                         </a>
                     </router-link>
                     <router-link to="/perfil/solucionador"
                         tag="li">
                         <a>
                             <i class="icon-brain"></i>
-                            <span>Perfil - S</span>
+                            <span>Perfil</span>
                         </a>
                     </router-link>
                     
