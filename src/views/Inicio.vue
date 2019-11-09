@@ -1,10 +1,10 @@
 <template>
 <section class="container ">
-    <!-- <div class="fundo-laranja">
+    <div class="fundo-laranja">
         <img
-                src="/assets/images/conseu.png"
+                src="/assets/images/LARANJA_LOGO.png"
                 alt="">
-    </div> -->
+    </div>
 </section>
 </template>
 

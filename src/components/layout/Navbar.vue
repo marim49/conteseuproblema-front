@@ -4,9 +4,8 @@
         <a class="navbar-brand"
             href="index.html">
             <img class="silas-logo"
-                src="/assets/images/conseu.png"
+                src="/assets/images/logo_branca.png"
                 alt="">
-            <div class="silas-description">!nova¡</div>
         </a>
 
         <ul class="nav navbar-nav visible-xs-block">
