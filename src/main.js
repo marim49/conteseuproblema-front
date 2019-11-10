@@ -8,6 +8,7 @@ import PageHeader from '@/components/controls/PageHeader'
 import ControlWrapper from '@/components/controls/ControlWrapper'
 import Select2 from '@/components/controls/Select2'
 import moment from 'moment'
+import ECharts from 'vue-echarts'
   
 Vue.config.productionTip = false
 Vue.filter('formatDate', function(value) {
@@ -22,6 +23,7 @@ PNotify.defaults.icons = 'material'
 Vue.component('page-header', PageHeader)
 Vue.component('control-wrapper', ControlWrapper)
 Vue.component('select2', Select2)
+Vue.component('v-chart', ECharts)
 
 Vue.mixin({
   methods: mapActions(['showLoading', 'hideLoading'])
