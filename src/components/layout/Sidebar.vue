@@ -48,6 +48,13 @@
                             <span>Início</span>
                         </a>
                     </router-link>
+                    <router-link to="/gerencial/dashboard"
+                        tag="li">
+                        <a>
+                            <i class="icon-graph"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </router-link>
                     <!-- <router-link to="/desafios/inscrever"
                         tag="li">
                         <a>
@@ -76,7 +83,7 @@
                             <i class="icon-medal"></i>
                             <span>Visualizar ranking - S</span>
                         </a>
-                    </router-link> -->
+                    </router-link> -->             
                     <router-link to="/perfil/solucionador"
                         tag="li">
                         <a>

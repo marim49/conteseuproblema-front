@@ -51,25 +51,9 @@ export default new Router({
             component: require('@/views/ranking/Solucionador').default
         },
         {
-            path: '/ensalamento',
-            component: require('@/views/ensalamento/Index').default,
+            path: '/gerencial/dashboard',
+            component: require('@/views/gerencial/Dashboard').default
         },
-        {
-            path: '/professores',
-            component: require('@/views/professor/Index').default,
-        },
-        {
-            path: '/salas',
-            component: require('@/views/sala/Index').default,
-        },
-        {
-            path: '/turmas',
-            component: require('@/views/turma/Index').default,
-        },   
-        {
-            path: '/cadastro/professor',
-            component: require('@/views/professor/Novo').default
-        }, 
         
 
     ],
