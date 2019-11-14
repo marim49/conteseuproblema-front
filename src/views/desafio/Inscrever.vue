@@ -110,7 +110,7 @@ Link para o código fonte do projeto: https://github.com/marim49/green-box
                     <label>Data de expiração:</label>
                     <input
                       type="text"
-                      value="10/07/2019"
+                      value="28/12/2019"
                       name="experience-company"
                       placeholder="Company name"
                       class="form-control"
