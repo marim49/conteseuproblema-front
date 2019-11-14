@@ -11,7 +11,6 @@
                             <i class="icon-users"></i>
                         </div>
                         <h5 class="content-group-lg">Logar
-                            <small class="display-block">Já sou cadastrado</small>
                         </h5>
                     </div>
 
@@ -20,7 +19,7 @@
                             name="cpf"
                             v-model="cpf"
                             class="form-control input-lg"
-                            placeholder="Digite seu CPF">
+                            placeholder="Digite seu usuario">
                         <div class="form-control-feedback">
                             <i class="icon-user text-mutecontffdsgfsfsdfsdd"></i>
                         </div>
@@ -60,40 +59,11 @@
                             <i class="icon-arrow-right14 position-right"></i>
                         </a>
                     </div>
-
-                    <div class="content-divider text-muted form-group">
-                        <span>ou entre usando</span>
-                    </div>
-                    <ul class="list-inline form-group list-inline-condensed text-center">
-                        <li>
-                            <a href="#"
-                                class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded">
-                                <i class="icon-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="btn border-pink-300 text-pink-300 btn-flat btn-icon btn-rounded">
-                                <i class="icon-google"></i>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="content-divider text-muted form-group">
-                        <span>Não tem uma conta?</span>
-                    </div>
-                    <a class="btn bg-slate btn-block btn-lg content-group"
-                        @click="cadastrar_user">Cadastrar</a>
-                    <span class="help-block text-center">Se continuar, você estará confirmando que você leu e aceitou os nossos
-                        <a href="#">Termos e condições</a> e a nossa
-                        <a href="#">Política de privacidade</a>
-                    </span>
                 </div>
             </form>
             <!-- /advanced login -->
         </div>
         <!-- /main content -->
-    
 </template>
 <script>
 import { mapActions } from 'vuex'
