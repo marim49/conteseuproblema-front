@@ -83,15 +83,15 @@
                             <i class="icon-medal"></i>
                             <span>Visualizar ranking - S</span>
                         </a>
-                    </router-link> -->             
-                    <router-link to="/perfil/solucionador"
+                    </router-link> -->
+                    <router-link to="/empresa/premiacoes"
                         tag="li">
                         <a>
                             <i class="icon-trophy3"></i>
                             <span>Premiações</span>
                         </a>
                     </router-link>
-                    <router-link to="/solucionador/rank"
+                    <router-link to="/empresa/rank"
                         tag="li">
                         <a>
                             <i class="icon-podium"></i>

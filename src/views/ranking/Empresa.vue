@@ -12,7 +12,7 @@
 					<li class="media">
 						<div class="media-left media-middle">
 							<a href="#">
-								<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+								<img src="assets/images/leandro_modelo.jpeg" class="img-circle img-md" alt="">
 							</a>
 						</div>
 

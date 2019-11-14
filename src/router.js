@@ -13,7 +13,7 @@ function filterPfPj(to, from, next) {
 
 export default new Router({
     routes: [
-        
+
         {
             path: '/',
             component: require('@/views/Inicio').default,
@@ -54,7 +54,10 @@ export default new Router({
             path: '/gerencial/dashboard',
             component: require('@/views/gerencial/Dashboard').default
         },
-        
+        {
+            path: '/empresa/premiacoes',
+            component: require('@/views/premiacao/Premiacao').default
+        },
 
     ],
 })
