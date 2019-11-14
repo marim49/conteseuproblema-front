@@ -131,67 +131,6 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-6">
-                  <label>Visibilidade do meu perfil</label>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="visibility" class="styled" checked="checked" />
-                      Visível para todos
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="visibility" class="styled" />
-                      Visível somente para empresas que participo dos desafios e solucionadores
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="visibility" class="styled" />
-                      Visível somente para outros solucionadores
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="visibility" class="styled" />
-                      Vísivel para ninguém
-                    </label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <label>Notificações</label>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" class="styled" checked="checked" />
-                      Receber notícias por email
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" class="styled" />
-                      Me mantenha atualizado de novos desafios
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" class="styled" checked="checked" />
-                      Notificar de atualizações dos desafios a qual participo
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="text-right">
               <button type="submit" class="btn btn-primary">
                 Atualizar
