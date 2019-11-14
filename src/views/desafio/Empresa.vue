@@ -29,7 +29,7 @@
                             <tr v-for="linha in tabela"
                                 :key="linha.id">
                                 <td>{{ linha.nome }}</td>
-                                <td></td>
+                                <td>Desenvolvimento</td>
                                 <td>{{ linha.premio }}</td>
                                 <td>{{ linha.prazo | formatDate }}</td>
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
