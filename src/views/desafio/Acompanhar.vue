@@ -91,7 +91,8 @@
                       class="form-control"
                       rows="4"
                       cols="3"
-                      readonly>Desenvolver uma solução para realizar uma compra de vários itens no carrinho através de diversos meios de pagamento. Link para o código fonte do projeto: https://github.com/marim49/green-box
+                      readonly>Desenvolver uma solução para realizar uma compra de vários itens no carrinho através de diversos meios de pagamento.
+Link para o código fonte do projeto: https://github.com/marim49/green-box
                     </textarea>
                     
                   </div>
@@ -165,7 +166,6 @@
         </div>
       </div>
     </div>
-    
   </div>
 </template>
 
