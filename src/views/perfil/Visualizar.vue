@@ -11,7 +11,7 @@
               <div class="media-middle">
                 <i class="icon-trophy3 icon-3x text-success-400"></i>
               </div>
-              <h3 class="no-margin text-semibold">652,549</h3>
+              <h3 class="no-margin text-semibold">660</h3>
               <span class="text-uppercase text-size-mini text-muted">Pontuação por soluções</span>
             </div>
           </div>

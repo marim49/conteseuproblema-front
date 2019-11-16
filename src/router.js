@@ -23,8 +23,8 @@ export default new Router({
             component: require('@/views/desafio/Solucionador').default,
         },
         {
-            path: '/desafios/empresa',
-            component: require('@/views/desafio/Empresa').default,
+            path: '/desafios/listar',
+            component: require('@/views/desafio/Listar').default,
         },
         {
             path: '/desafios/cadastro',
@@ -35,12 +35,20 @@ export default new Router({
             component: require('@/views/desafio/Inscrever').default
         },
         {
+            path: '/desafios/historico/:id',
+            component: require('@/views/desafio/HistoricoSolucao').default
+        },
+        {
+            path: '/desafios/resposta/:id/:idSolucionador',
+            component: require('@/views/desafio/Resposta').default
+        },
+        {
             path: '/perfil/empresa',
             component: require('@/views/perfil/Empresa').default
         }, 
         {
-            path: '/perfil/solucionador',
-            component: require('@/views/perfil/Solucionador').default
+            path: '/perfil/visualizar',
+            component: require('@/views/perfil/Visualizar').default
         }, 
         {
             path: '/empresa/rank',

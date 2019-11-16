@@ -62,28 +62,13 @@
                             <span>inscrever em desafio - S</span>
                         </a>
                     </router-link> -->
-                    <router-link to="/desafios/empresa"
+                    <router-link to="/desafios/listar"
                         tag="li">
                         <a>
                             <i class="icon-puzzle"></i>
                             <span>Desafios</span>
                         </a>
                     </router-link>
-                    <!-- <router-link to="/desafios/solucionador"
-                        tag="li">
-                        <a>
-                            <i class=" icon-puzzle"></i>
-                            <span>Visualizar desafios - S</span>
-                        </a>
-                    </router-link> -->
-                    
-                    <!-- <router-link to="/empresa/rank"
-                        tag="li">
-                        <a>
-                            <i class="icon-medal"></i>
-                            <span>Visualizar ranking - S</span>
-                        </a>
-                    </router-link> -->
                     <router-link to="/empresa/premiacoes"
                         tag="li">
                         <a>
@@ -98,7 +83,7 @@
                             <span>Ranking</span>
                         </a>
                     </router-link>
-                    <router-link to="/perfil/solucionador"
+                    <router-link to="/perfil/visualizar"
                         tag="li">
                         <a>
                             <i class="icon-brain"></i>

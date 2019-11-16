@@ -22,6 +22,7 @@
                                 <th>Setor</th>
                                 <th>Prêmio</th>
                                 <th>Prazo final</th>
+                                <th style="text-align: center;">Status</th> 
                                 <th style="text-align: center;">Opções</th>
                             </tr>
                         </thead>
@@ -32,15 +33,17 @@
                                 <td>Desenvolvimento</td>
                                 <td>{{ linha.premio }}</td>
                                 <td>{{ linha.prazo | formatDate }}</td>
+                                <td style="text-align: center;"><span class="label label-success">Ativo</span></td>
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
                                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações">
                                            <router-link to="/desafios/inscrever" class="btn btn-success icon-enter2" role="button" data-toggle="tooltip" data-placement="top" title="Entrar em desafio"></router-link>
-                                           <a class="btn btn-info icon-file-eye2" role="button" data-toggle="tooltip" data-placement="top" title="Visualizar detalhes do desafio"> </a>
+                                           <router-link to="/desafios/historico/1" class="btn btn-info icon-bubbles10" role="button" data-toggle="tooltip" data-placement="top" title="Solucoes do desafio"></router-link>
                                            <a class="btn btn-primary icon-pencil5" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></a>
                                            <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button" data-toggle="tooltip" data-placement="top" title="Excluir desafio"></button>
                                         </div>
                                     </div>
                                 </td>
+                                
                             </tr>
                         </tbody>
                     </table>

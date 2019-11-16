@@ -1,7 +1,7 @@
 <template>
 <div>
     <page-header>
-        <span class="text-semibold">Rank</span>
+        <span class="text-semibold">Ranking</span>
     </page-header>
     <div class="content">
         <div class="panel panel-flat">
@@ -57,11 +57,9 @@ export default {
     async created() {
         try {
             this.showLoading()
-            let { data } = await axios.get('/api/professor/professor')
-            this.tabela = data
-        } catch (err) {
-            PNotify.error('Erro ao obter dados do servidor. Tente novamente mais tarde.')
-        } finally {
+            //let { data } = await axios.get('/api/professor/professor')
+            //this.tabela = data
+        }  finally {
             this.hideLoading()
         }
     }
