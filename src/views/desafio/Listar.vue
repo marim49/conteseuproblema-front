@@ -36,10 +36,11 @@
                                 <td style="text-align: center;"><span class="label label-success">Ativo</span></td>
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
                                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações">
-                                           <router-link to="/desafios/inscrever" class="btn btn-success icon-enter2" role="button" data-toggle="tooltip" data-placement="top" title="Entrar em desafio"></router-link>
-                                           <router-link to="/desafios/historico/1" class="btn btn-info icon-bubbles10" role="button" data-toggle="tooltip" data-placement="top" title="Solucoes do desafio"></router-link>
-                                           <a class="btn btn-primary icon-pencil5" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></a>
-                                           <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button" data-toggle="tooltip" data-placement="top" title="Excluir desafio"></button>
+                                            <router-link to="/desafios/inscrever" class="btn btn-success icon-enter2" role="button" data-toggle="tooltip" data-placement="top" title="Entrar em desafio"></router-link>
+                                            <router-link to="/desafios/visualizar/1" class="btn btn-primary icon-eye4" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
+                                            <router-link to="/desafios/historico/1" class="btn btn-info icon-bubbles10" role="button" data-toggle="tooltip" data-placement="top" title="Solucoes do desafio"></router-link>
+                                            <router-link to="/desafios/editar/1" class="btn btn-warning icon-pencil5" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
+                                            <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button" data-toggle="tooltip" data-placement="top" title="Excluir desafio"></button>
                                         </div>
                                     </div>
                                 </td>

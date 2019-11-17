@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header>
-      <span class="text-semibold">Desafio</span> - Novo cadastro
+      <span class="text-semibold">Desafio</span> - Editar
     </page-header>
     <div class="content">
       <div class="panel panel-flat">
@@ -13,9 +13,11 @@
               <control-wrapper label="Nome:">
                 <input
                   type="text"
+                   value="Desafio e-commerce"
                   class="form-control"
                   placeholder="Insira o nome do desafio"
                   v-model="nome_desafio"
+                 
                 >
               </control-wrapper>
               <control-wrapper label="Setor:">
@@ -23,7 +25,7 @@
                   class="form-control"
                   v-model="setor"
                 >
-                <option value="desenvolvimento">Desenvolvimento</option>
+                <option value="desenvolvimento" selected>Desenvolvimento</option>
                 </select>
               </control-wrapper>
               <control-wrapper label="Descrição do desafio:">
@@ -32,13 +34,14 @@
                   class="form-control"
                   placeholder="Insira aqui toda a informação referente ao desafio para que possa ser solucionado"
                   v-model="requisitos"
+                  value="aaaa"
                 ></textarea>
               </control-wrapper>
               <control-wrapper label="Tipo de prêmio:">
                 <select
                   class="form-control"
                 >
-                <option value="1">Dinheiro</option>
+                <option value="1" selected>Dinheiro</option>
                 <option value="2">Emprego</option>
                 </select>
               </control-wrapper>
@@ -48,6 +51,7 @@
                   class="form-control"
                   placeholder="Insira aqui o prêmio para o desafio"
                   v-model="premio"
+                  value="R$ 10000,00"
                 ></textarea>
               </control-wrapper>
               <control-wrapper label="Data expiração:">
@@ -56,6 +60,7 @@
                   class="form-control"
                   placeholder="Insira aqui as regras necessários para o desafio"
                   v-model="data_expiracao"
+                  value="28/11/2019"
                 >
               </control-wrapper>
             </fieldset>

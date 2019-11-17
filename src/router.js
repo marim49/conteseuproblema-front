@@ -35,6 +35,14 @@ export default new Router({
             component: require('@/views/desafio/Inscrever').default
         },
         {
+            path: '/desafios/visualizar/:id',
+            component: require('@/views/desafio/Visualizar').default
+        },
+        {
+            path: '/desafios/editar/:id',
+            component: require('@/views/desafio/Editar').default
+        },
+        {
             path: '/desafios/historico/:id',
             component: require('@/views/desafio/HistoricoSolucao').default
         },
