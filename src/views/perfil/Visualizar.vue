@@ -5,17 +5,6 @@
     </page-header>
     <div class="content">
       <!-- Profile info -->
-	  <div class="panel panel-flat">
-		<div class="panel-body text-center">
-            <div class="media-body text-center">
-              <div class="media-middle">
-                <i class="icon-trophy3 icon-3x text-success-400"></i>
-              </div>
-              <h3 class="no-margin text-semibold">660</h3>
-              <span class="text-uppercase text-size-mini text-muted">Pontuação por soluções</span>
-            </div>
-          </div>
-	  </div>
       <div class="panel panel-flat">
         <div class="panel-heading">
           <h6 class="panel-title">Informações do perfil</h6>
