@@ -16,11 +16,11 @@
               <div class="row">
                 <div class="col-md-6">
                   <label>Nome</label>
-                  <input type="text" value="Leandro" class="form-control" />
+                  <input type="text"  v-model="usuario[0].nome" class="form-control" />
                 </div>
                 <div class="col-md-6">
                   <label>Sobrenome</label>
-                  <input type="text" value="Marim Mauricio" class="form-control" />
+                  <input type="text"  v-model="usuario[0].sobrenome" class="form-control" />
                 </div>
               </div>
             </div>
@@ -29,15 +29,15 @@
               <div class="row">
                 <div class="col-md-4">
                   <label>Cidade</label>
-                  <input type="text" value="Belo Horizonte" class="form-control" />
+                  <input type="text"  v-model="usuario[0].cidade" class="form-control" />
                 </div>
                 <div class="col-md-4">
                   <label>Estado</label>
-                  <input type="text" value="Minas Gerais" class="form-control" />
+                  <input type="text"  class="form-control" v-model="usuario[0].estado"/>
                 </div>
                 <div class="col-md-4">
                   <label>País</label>
-                  <input type="text" value="Brazil" class="form-control" />
+                  <input type="text" v-model="usuario[0].pais" class="form-control" />
                 </div>
               </div>
             </div>
@@ -49,13 +49,13 @@
                   <input
                     type="text"
                     readonly="readonly"
-                    value="leandro.marim@hotmail.com"
                     class="form-control"
+                    v-model="usuario[0].email"
                   />
                 </div>
                 <div class="col-md-6">
                   <label>Telefone</label>
-                  <input type="text" value="(99) 99999-9999" class="form-control" />
+                  <input type="text" v-model="usuario[0].telefone" class="form-control" />
                 </div>
               </div>
             </div>
@@ -64,7 +64,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <label>Celular</label>
-                  <input type="text" value="(99) 99999-9999" class="form-control" />
+                  <input type="text" v-model="usuario[0].telefone" class="form-control" />
                 </div>
 
                 <div class="col-md-6">
@@ -96,12 +96,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <label>CPF</label>
-                  <input type="text" value="143.652.096-71" readonly="readonly" class="form-control" />
+                  <input type="text" v-model="usuario[0].cpf" readonly="readonly" class="form-control" />
                 </div>
 
                 <div class="col-md-6">
                   <label>Senha atual</label>
-                  <input type="password" value="password" readonly="readonly" class="form-control" />
+                  <input type="password" value="password" v-model="usuario[0].usuario.password" readonly="readonly" class="form-control" />
                 </div>
               </div>
             </div>
@@ -140,10 +140,16 @@ import PNotify from "pnotify/dist/es/PNotify";
 
 export default {
   data() {
-    return {
-      descricao: null,
-      codigo: null
-    };
+    return { usuario: [] }
+  },
+  async created(){
+    try {
+      const {data} = await axios.get('api/conteseuproblema/getUser')
+      this.usuario = data.data
+    } catch (error) {
+      PNotify.error('Erro ao buscar usuario')
+    }
+
   },
   methods: {
     async save() {
@@ -154,7 +160,7 @@ export default {
       console.log(saveData);
       // console.log(saveData)
       try {
-        let { data } = await axios.post("/api/disciplina/create", saveData);
+        let { data } = await axios.post("");
         // console.log(data)
         if (data.success) {
           PNotify.success("Registro salvo com sucesso");

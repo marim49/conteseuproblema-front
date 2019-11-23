@@ -82,7 +82,7 @@ export default {
 
     },
     mounted() {
-        let token = localStorage.getItem('token')
+        let token = localStorage.token
         if (token) {
             this.login(token)
         }
@@ -90,8 +90,8 @@ export default {
     methods: {
         ...mapActions(['login', 'cadastrar_usuario']),
         async logar() {
-            let { data } = await axios.post('/api/acesso/logar', { cpf: this.cpf, password: this.password })
-            localStorage.setItem('token', data)
+            let { data } = await axios.post('/api/conteseuproblema/login', { user: this.cpf, password: this.password })
+            localStorage.setItem('token', data.data)
             this.login(data)
         },
         cadastrar_user() {
