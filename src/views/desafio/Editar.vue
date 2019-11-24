@@ -13,19 +13,14 @@
               <control-wrapper label="Nome:">
                 <input
                   type="text"
-                   value="Desafio e-commerce"
                   class="form-control"
+                  v-model="nome"
                   placeholder="Insira o nome do desafio"
-                  v-model="nome_desafio"
-                 
-                >
+                />
               </control-wrapper>
               <control-wrapper label="Setor:">
-                <select
-                  class="form-control"
-                  v-model="setor"
-                >
-                <option value="desenvolvimento" selected>Desenvolvimento</option>
+                <select class="form-control">
+                  <option value="Desenvolvimento" selected>Desenvolvimento</option>
                 </select>
               </control-wrapper>
               <control-wrapper label="Descrição do desafio:">
@@ -34,15 +29,12 @@
                   class="form-control"
                   placeholder="Insira aqui toda a informação referente ao desafio para que possa ser solucionado"
                   v-model="requisitos"
-                  value="aaaa"
                 ></textarea>
               </control-wrapper>
               <control-wrapper label="Tipo de prêmio:">
-                <select
-                  class="form-control"
-                >
-                <option value="1" selected>Dinheiro</option>
-                <option value="2">Emprego</option>
+                <select class="form-control">
+                  <option value="1" selected>Dinheiro</option>
+                  <option value="2">Emprego</option>
                 </select>
               </control-wrapper>
               <control-wrapper label="Prêmio:">
@@ -51,7 +43,6 @@
                   class="form-control"
                   placeholder="Insira aqui o prêmio para o desafio"
                   v-model="premio"
-                  value="R$ 10000,00"
                 ></textarea>
               </control-wrapper>
               <control-wrapper label="Data expiração:">
@@ -59,9 +50,8 @@
                   type="date"
                   class="form-control"
                   placeholder="Insira aqui as regras necessários para o desafio"
-                  v-model="data_expiracao"
-                  value="28/11/2019"
-                >
+                  v-model="dtExpiracao"
+                />
               </control-wrapper>
             </fieldset>
             <div class="text-right">
@@ -78,51 +68,65 @@
 </template>
 
 <script>
-import axios from 'axios'
-import PNotify from 'pnotify/dist/es/PNotify'
-import moment from 'moment'
+import axios from "axios";
+import PNotify from "pnotify/dist/es/PNotify";
+import moment from "moment";
 
 export default {
-    data(){
-        return{
-            nome_desafio: null,
-            setor: null,
-            regras: null,
-            requisitos: null,
-            premio: null,
-            data_expiracao: null
-        } 
-    },
-    methods: {
-        async save() {
-            let saveData = {
-                nome_desafio: this.nome_desafio,
-                setor: this.setor,
-                regras: this.regras,
-                requisitos: this.requisitos,
-                premio: this.premio,
-                data_expiracao: this.data_expiracao,
-                data_criacao: new Date().toJSON().slice(0, 10)
-
-                
-            }
-            console.log(saveData)
-            try {
-                let { data }  = await axios.post('/api/desafio/create', saveData)
-                if (data.success) {
-                    this.$router.push('/desafios')
-                } else {
-                    console.log('error')
-                    PNotify.error(data.message)
-                    this.hideLoading()
-                }
-            } catch (err) {
-                console.log(err)
-                PNotify.error('Erro ao salvar os dados')
-                this.hideLoading()
-            }
-        },
+  data() {
+    return {
+      nome:null,
+      regras:null,
+      setor:null,
+      requisitos:null,
+      dtExpiracao: null,
+      premio:null
     }
-}
-    
+  },
+  async created() {
+    try {
+      this.showLoading()
+      const  {data} = await axios.get("api/conteseuproblema/retornaProblema/" + this.$route.params.id)
+      this.nome = (data.data[0].desc) ? data.data[0].desc : '',
+      this.regras= data.data[0].regras,
+      this.setor= data.data[0].setor,
+      this.requisitos= data.data[0].requisitos,
+      this.dtExpiracao = moment(data.data[0].prazo).format("YYYY-MM-DD"),
+      this.premio = data.data[0].premiacao
+    } catch (error) {
+      console.log(error)
+    } finally {
+      this.hideLoading()
+    }
+  },
+  methods: {
+    async save() {
+      let saveData = {
+        nomeDesafio: this.nome,
+        setor: this.setor,
+        regras: this.regras,
+        requisitos: this.requisitos,
+        premio: this.premio,
+        dataExpiracao: moment(this.dtExpiracao).format('YYYY-MM-DD')
+      };
+      try {
+        let { data } = await axios.post("api/conteseuproblema/editarProblema/"+this.$route.params.id, saveData)
+        if (!data.error) {
+          this.$swal.fire({text: data.msg, type:'success', timer:1300})
+          setTimeout(() => {
+            this.$router.push("/desafios/listar")
+          },1500)
+        } else {
+          console.log("error");
+          this.$swal.fire({text: data.msg, type:'error'})
+          this.hideLoading();
+        }
+      } catch (err) {
+        console.log(err);
+        this.$swal.fire({text:"Erro ao salvar os dados", type:'error'})
+        this.hideLoading();
+      }
+    }
+  }
+};
 </script>

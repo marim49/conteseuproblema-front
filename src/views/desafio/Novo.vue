@@ -96,19 +96,20 @@ export default {
                 regras: this.regras,
                 requisitos: this.requisitos,
                 premio: this.premio,
-                data_expiracao: this.data_expiracao,
-                data_criacao: new Date().toJSON().slice(0, 10)
+                data_expiracao: moment(this.data_expiracao).format('YYYY-MM-DD'),
+                data_criacao: moment().format('YYYY-MM-DD')
 
                 
             }
-            console.log(saveData)
             try {
                 let  {data}   = await axios.post('/api/conteseuproblema/cadastraProblema', saveData)
-                console.log(data)
                 if (!data.error) {
-                    this.$router.push('/desafios')
+                    this.$swal.fire({text: data.msg, type:'success', timer:1300})
+                    setTimeout(()=>{
+                      this.$router.push('/desafios/listar')
+                    },1500)
                 } else {
-                    console.log('error')
+                    this.$swal.fire({text: data.msg, type:'error'})
                     PNotify.error(data.msg)
                     this.hideLoading()
                 }

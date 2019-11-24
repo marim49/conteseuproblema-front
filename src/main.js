@@ -9,13 +9,16 @@ import ControlWrapper from '@/components/controls/ControlWrapper'
 import Select2 from '@/components/controls/Select2'
 import moment from 'moment'
 import ECharts from 'vue-echarts'
-  
+import VueSweetalert2 from 'vue-sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css'
+
 Vue.config.productionTip = false
-Vue.filter('formatDate', function(value) {
+Vue.use(VueSweetalert2)
+Vue.filter('formatDate', function (value) {
   if (value) {
-    return  moment(String(value)).locale('pt-br').format('DD/MM/YYYY')
+    return moment(String(value)).locale('pt-br').format('DD/MM/YYYY')
   }
-});
+})
 
 PNotify.defaults.styling = 'material'
 PNotify.defaults.icons = 'material'
@@ -32,5 +35,5 @@ Vue.mixin({
 new Vue({
   router,
   store,
-  render: h => h(App),
+  render: h => h(App)
 }).$mount('#app')

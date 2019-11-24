@@ -6,8 +6,8 @@
     <div class="content">
         <div class="panel panel-flat">
             <div class="panel-body">
-                <ul class="media-list">
-					<li class="media-header text-muted">Solucionadores Destaque</li>
+                <ul class="media-list" v-for="linha in tabela" :key="linha.nome">
+					
 
 					<li class="media">
 						<div class="media-left media-middle">
@@ -17,8 +17,11 @@
 						</div>
 
 						<div class="media-body">
-							<div class="media-heading text-semibold">Leandro Marim</div>
-							<span class="text-muted">Desenvolvedor</span>
+							<div class="media-heading text-semibold">{{linha.nome}}</div>
+							<span class="text-muted"><b>Setor:</b> {{linha.setor}}</span>
+						</div>
+						<div class="media-right">
+							<span class="text-muted">{{linha.pontuacao}}</span>
 						</div>
 
 						<div class="media-right media-middle">
@@ -57,9 +60,12 @@ export default {
     async created() {
         try {
             this.showLoading()
-            //let { data } = await axios.get('/api/professor/professor')
-            //this.tabela = data
-        }  finally {
+            let { data } = await axios.get('/api/conteseuproblema/getRanking')
+            this.tabela = data.data
+				}
+				catch(err){
+					PNotify.err(err)
+				}  finally {
             this.hideLoading()
         }
     }
