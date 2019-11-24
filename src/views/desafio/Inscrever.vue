@@ -133,11 +133,6 @@
                       class="form-control"
                     ></textarea>
                   </div>
-
-                  <div class="form-group">
-                    <label class="display-block">Envio da solução:</label>
-                    <input name="recommendations" type="file" class="file-styled" />
-                  </div>
               </div>
             </fieldset>
 

@@ -5,60 +5,51 @@
     </page-header>
     <div class="content">
       <div class="panel panel-flat timeline-content">
+		  <div class="panel-heading breadcrumb-line">
+				<h2 class="panel-title text-center">Desafio e-commerce</h2>
+				<br>
+				<div class="text-center"> Desenvolver uma solução para realizar uma compra de vários itens no carrinho através de diversos meios de pagamento. </div>
+		  </div>
 			<div class="panel-body">
+				<br>
 				<ul class="media-list chat-list content-group">
 					<li class="media date-step">
-						<span>Hoje</span>
+						<span>Soluções enviadas</span>
 					</li>
 					<li class="media reversed">
 						<div class="media-body">
 							<div class="media-content">Para solucionar o problema que vocês estão tendo com e-commerce, recomendo vocês procurarem um designer, pois não está nada usual e eu sinceramente não compraria nada na plataforma.</div>
+							<span class="media-annotation display-block mt-10"> <a title="eleger como ganhador" href="#"><i class="btn btn-success position-right icon-checkmark4"></i></a> <a title="recusar solução" href="#"><i class="btn btn-danger icon-blocked position-right text-muted"></i></a></span>
 						</div>
 						<div class="media-right">
 							<a href="assets/images/placeholder.jpg">
 								<img src="../../../public/assets/images/leandro_modelo.jpeg" class="img-circle img-md" alt="">
 							</a>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-left">
-							<a href="assets/images/placeholder.jpg">
-								<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
-							</a>
-						</div>
-						<div class="media-body">
-							<div class="media-content">Obrigado por nos ajudar a observar isto, mas o intuito e descobrir de uma forma efetiva como podemos resolver o problema no momento do pagamento via cartão de credito na plataforma, poderia nos ajudar com relação a isto?</div>
 						</div>
 					</li>
 					<li class="media reversed">
 						<div class="media-body">
-							<div class="media-content">	Com relação a isto, vocês poderiam realizar uma integração com algum sistema de pagamento de e-commerce, como por exemplo o pagSeguro. Eu sei fazer esta integração, apesar de eu não ser do setor de e-commerce, eu posso ajudar.</div>
+							<div class="media-content">Se vocês mudassem a forma de pagamento, aceitando o boleto, poderiam contornar o problema</div>
+							<span class="media-annotation display-block mt-10"> <a title="eleger como ganhador" href="#"><i class="btn btn-success position-right icon-checkmark4"></i></a> <a title="recusar solução" href="#"><i class="btn btn-danger icon-blocked position-right text-muted"></i></a></span>
 						</div>
 						<div class="media-right">
-							<a href="">
+							<a href="assets/images/placeholder.jpg">
 								<img src="../../../public/assets/images/leandro_modelo.jpeg" class="img-circle img-md" alt="">
 							</a>
 						</div>
 					</li>
-					<li class="media">
-						<div class="media-left">
+					<li class="media reversed">
+						<div class="media-body">
+							<div class="media-content">Creio que a solução seria utilizar um meio de integração com algum modulo de pagamento</div>
+							<span class="media-annotation display-block mt-10"> <a title="eleger como ganhador" href="#"><i class="btn btn-success position-right icon-checkmark4"></i></a> <a title="recusar solução" href="#"><i class="btn btn-danger icon-blocked position-right text-muted"></i></a></span>
+						</div>
+						<div class="media-right">
 							<a href="assets/images/placeholder.jpg">
-								<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+								<img src="../../../public/assets/images/leandro_modelo.jpeg" class="img-circle img-md" alt="">
 							</a>
 						</div>
-						<div class="media-body">
-							<div class="media-content">Era isto que precisávamos ouvir!! É bom descobrir alguns talentos escondidos pela empresa.</div>
- 						</div>
 					</li>
 				</ul>
-				<textarea name="enter-message" class="form-control content-group" rows="3" cols="1" placeholder="Enter your message..."></textarea>
-				<div class="row">
-					<div class="col-xs-6">
-					</div>
-					<div class="col-xs-6 text-right">
-			            <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-circle-right2"></i></b> Enviar</button>
-					</div>
-				</div>
 			</div>
 			</div>
 		</div>
