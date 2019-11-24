@@ -103,12 +103,13 @@ export default {
             }
             console.log(saveData)
             try {
-                let { data }  = await axios.post('/api/desafio/create', saveData)
-                if (data.success) {
+                let  {data}   = await axios.post('/api/conteseuproblema/cadastraProblema', saveData)
+                console.log(data)
+                if (!data.error) {
                     this.$router.push('/desafios')
                 } else {
                     console.log('error')
-                    PNotify.error(data.message)
+                    PNotify.error(data.msg)
                     this.hideLoading()
                 }
             } catch (err) {

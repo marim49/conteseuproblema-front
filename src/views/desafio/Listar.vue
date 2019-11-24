@@ -29,9 +29,9 @@
                         <tbody>
                             <tr v-for="linha in tabela"
                                 :key="linha.id">
-                                <td>{{ linha.nome }}</td>
-                                <td>Desenvolvimento</td>
-                                <td>{{ linha.premio }}</td>
+                                <td>{{ linha.desc }}</td>
+                                <td>{{ linha.setor}}</td>
+                                <td>{{ linha.premiacao }}</td>
                                 <td>{{ linha.prazo | formatDate }}</td>
                                 <td style="text-align: center;"><span class="label label-success">Ativo</span></td>
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
@@ -67,10 +67,13 @@ export default {
     async created() {
         try {
             this.showLoading()
-            let { data } = await axios.get('/api/desafio/list')
-            this.tabela = data
+            let  { data }  = await axios.get('/api/conteseuproblema/retornaProblema')
+            if (data.error) {
+                PNotify.error(data.msg)
+            }
+            this.tabela = data.data
         } catch (err) {
-            PNotify.error('Erro ao obter dados do servidor. Tente novamente mais tarde.')
+            PNotify.error(err.msg)
         } finally {
             this.hideLoading()
         }

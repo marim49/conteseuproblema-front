@@ -34,12 +34,12 @@ export default new Vuex.Store({
         HIDE_LOADING(state) { state.loading = false },
         LOGIN(state, token) {
             state.token = token
-            axios.defaults.headers.common['Authorizaton'] = token
+            axios.defaults.headers.common['Authorization'] = token
             setTimeout(templateInit, 10); // eslint-disable-line 
         },
         LOGOUT(state) {
             state.token = null
-            axios.defaults.headers.common['Authorizaton'] = null
+            axios.defaults.headers.common['Authorization'] = null
         }
     },
 })
