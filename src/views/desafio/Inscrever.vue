@@ -13,23 +13,11 @@
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Empresa:</label>
-                    <input
-                      type="text"
-                      value="E-commerce Brasil"
-                      name="experience-company"
-                      placeholder="Company name"
-                      class="form-control"
-                      disabled
-                    />
-                  </div>
-                  <div class="form-group">
                     <label>Nome do desafio:</label>
                     <input
                       type="text"
-                      value="Desafio e-commerce"
+                      v-bind:value="nome"
                       name="experience-company"
-                      placeholder="Company name"
                       class="form-control"
                       disabled
                     />
@@ -38,9 +26,8 @@
                     <label>Recompensa pelo desafio:</label>
                     <input
                       type="text"
-                      value="R$ 10000,00"
+                      v-bind:value="premio"
                       name="experience-company"
-                      placeholder="Company name"
                       class="form-control"
                       disabled
                     />
@@ -83,7 +70,7 @@
                 </div>
 
                 <div class="col-md-6">
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label>Regras:</label>
                     <textarea
                       name="experience-position"
@@ -94,24 +81,24 @@
                       readonly>Desenvolver uma solução para realizar uma compra de vários itens no carrinho através de diversos meios de pagamento. Link para o código fonte do projeto: https://github.com/marim49/green-box
                     </textarea>
                     
-                  </div>
+                  </div>-->
                   <div class="form-group">
-                    <label>Requisitos:</label>
+                    <label>Descrição:</label>
                     <textarea readonly
                       name="experience-description"
                       rows="2"
                       cols="3"
                       class="form-control"
-                    >Profissional ter graduação na área de TI
+                      v-bind:value="requisitos"
+                    >
                     </textarea>
                   </div>
                   <div class="form-group">
                     <label>Data de expiração:</label>
                     <input
                       type="text"
-                      value="28/12/2019"
+                      v-bind:value="dataExpiracao"
                       name="experience-company"
-                      placeholder="Company name"
                       class="form-control"
                       disabled
                     />
@@ -152,7 +139,7 @@
 							</div>
 							
 							<div class="panel-body">
-								Estamos avaliando a sua solução, em breve iremos atualizar este resultado
+                O gestor irá avaliar a sua solução, em breve. Agradecemos sua colaboração
 							</div>
 						</div>
             </fieldset>
@@ -172,25 +159,29 @@ import moment from "moment";
 export default {
   data() {
     return {
-      nome_desafio: null,
+      nome: null,
       setor: null,
-      regras: null,
       requisitos: null,
       premio: null,
-      data_expiracao: null
+      dataExpiracao: null
     };
+  },
+  async created() {
+    try {
+      const {data} = await axios.get('/api/conteseuproblema/retornaProblema/'+this.$route.params.id)
+      if (!data.error) {
+          this.nome = (data.data[0].desc) ? data.data[0].desc : '',
+          this.setor= data.data[0].setor,
+          this.requisitos= data.data[0].requisitos,
+          this.dataExpiracao = moment(data.data[0].prazo).format("YYYY-MM-DD"),
+          this.premio = data.data[0].premiacao
+      }
+    } catch (error) {
+      console.log(error)
+    }
   },
   methods: {
     async save() {
-      let saveData = {
-        nome_desafio: this.nome_desafio,
-        setor: this.setor,
-        regras: this.regras,
-        requisitos: this.requisitos,
-        premio: this.premio,
-        data_expiracao: this.data_expiracao,
-        data_criacao: new Date().toJSON().slice(0, 10)
-      };
       console.log(saveData);
       try {
         let { data } = await axios.post("/api/desafio/create", saveData);

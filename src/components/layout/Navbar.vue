@@ -30,16 +30,18 @@
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle"
                     data-toggle="dropdown">
-                    <img src="/assets/images/leandro_modelo.jpeg"
+                    <img v-bind:src="'/assets/images/'+imagem" 
                         alt="">
-                    <span>Leandro</span>
+                    <span>{{nome}}</span>
                     <i class="caret"></i>
                 </a>
 
                 <ul class="dropdown-menu dropdown-menu-right">
                     <li>
-                        <a href="#">
+                        <a>
+                        <router-link to='/perfil/visualizar' tag='li'>
                             <i class="icon-user-plus"></i> Minha conta
+                        </router-link>
                         </a>
                     </li>
                     <li class="divider"></li>
@@ -76,3 +78,24 @@
     display: inline-block;
 }
 </style>
+<script>
+    import axios from 'axios' 
+export default {
+  data() {
+    return { nome: null, imagem:null }
+  },
+  async created () {
+      try {
+          const {data} = await axios.get('api/conteseuproblema/getUser')
+          console.log(data.data)
+          if (!data.error) {
+              this.nome = data.data[0].nome
+              this.imagem = data.data[0].img
+
+          }
+      } catch (error) {
+          console.log(error)
+      }
+  }
+}
+</script>

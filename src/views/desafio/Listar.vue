@@ -36,11 +36,11 @@
                                 <td style="text-align: center;"><span class="label label-success">Ativo</span></td>
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
                                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações">
-                                            <router-link to="/desafios/inscrever" class="btn btn-success icon-enter2" role="button" data-toggle="tooltip" data-placement="top" title="Entrar em desafio"></router-link>
-                                            <router-link to="/desafios/visualizar/1" class="btn btn-primary icon-eye4" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
-                                            <router-link to="/desafios/historico/1" class="btn btn-info icon-bubbles10" role="button" data-toggle="tooltip" data-placement="top" title="Solucoes do desafio"></router-link>
+                                            <router-link v-bind:to="'/desafios/inscrever/'+linha.id" class="btn btn-success icon-enter2" role="button" data-toggle="tooltip" data-placement="top" title="Entrar em desafio"></router-link>
+                                            <router-link v-bind:to="'/desafios/visualizar/'+linha.id" class="btn btn-primary icon-eye4" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
+                                            <router-link v-bind:to="'/desafios/historico/'+linha.id" class="btn btn-info icon-bubbles10" role="button" data-toggle="tooltip" data-placement="top" title="Solucoes do desafio"></router-link>
                                             <router-link v-bind:to="'/desafios/editar/'+linha.id" class="btn btn-warning icon-pencil5" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
-                                            <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button" data-toggle="tooltip" data-placement="top" title="Excluir desafio"></button>
+                                            <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button" data-toggle="tooltip" data-placement="top" title="Excluir desafio" v-on:click="deletar(linha.id)"></button>
                                         </div>
                                     </div>
                                 </td>
@@ -69,13 +69,27 @@ export default {
             this.showLoading()
             let  { data }  = await axios.get('/api/conteseuproblema/retornaProblema')
             if (data.error) {
-                PNotify.error(data.msg)
+                this.$swal.fire({text: data.msg, type: 'error', timer: 1200})
             }
             this.tabela = data.data
         } catch (err) {
             PNotify.error(err.msg)
         } finally {
             this.hideLoading()
+        }
+    },
+    methods:{
+        async deletar(id) {
+                try {
+                    const {data} = await axios.delete('/api/conteseuproblema/deletarProblema/'+id)
+                    if (!data.error) {
+                        this.$swal.fire({text: data.msg, type: 'success', timer:1200})
+                    } else {
+                        this.$swal.fire({text: data.msg, type: 'error', timer:1200})
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
         }
     }
 }

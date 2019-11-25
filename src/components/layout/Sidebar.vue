@@ -1,97 +1,87 @@
 <template>
-<!-- Main sidebar -->
-<div class="sidebar sidebar-main sidebar-fixed">
+  <!-- Main sidebar -->
+  <div class="sidebar sidebar-main sidebar-fixed">
     <div class="sidebar-content">
-        <!-- User menu -->
-        <div class="sidebar-user">
-            <div class="category-content">
-                <div class="media">
-                    <a href="#"
-                        class="media-left">
-                        <img src="/assets/images/leandro_modelo.jpeg"
-                            class="img-circle img-sm"
-                            alt="">
-                    </a>
-                    <div class="media-body">
-                        <span class="media-heading text-semibold">Leandro Marim</span>
-                        <div class="text-size-mini text-muted">
-                            <i class="icon-pin text-size-small"></i> &nbsp;Belo Horizonte, MG
-                        </div>
-                    </div>
-                    <div class="media-right media-middle">
-                        <ul class="icons-list">
-                            <li>
-                                <a href="#">
-                                    <i class="icon-cog3"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      <!-- User menu -->
+      <div class="sidebar-user">
+        <div class="category-content">
+          <div class="media">
+            <a href="#" class="media-left">
+              <img v-bind:src="'/assets/images/'+imagem" class="img-circle img-lg" alt />
+            </a>
+            <div class="media-body">
+              <span class="media-heading text-semibold">Olá, {{nome}}&nbsp;{{sobrenome}}</span>
+              <div class="text-size-mini text-muted">
+                <i class="icon-pin text-size-small"></i>&nbsp;{{cidade}}, MG
+              </div>
             </div>
+            <div class="media-right media-middle">
+              <ul class="icons-list">
+                <li>
+                  <a href="#">
+                    <i class="icon-cog3"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <!-- /user menu -->
-        <!-- Main navigation -->
-        <div class="sidebar-category sidebar-category-visible">
-            <div class="category-content no-padding">
-                <ul class="navigation navigation-main navigation-accordion">
-                    <!-- Main -->
-                    <li class="navigation-header">
-                        <i class="icon-menu"
-                            title="Main pages"></i>
-                    </li>
+      </div>
+      <!-- /user menu -->
+      <!-- Main navigation -->
+      <div class="sidebar-category sidebar-category-visible">
+        <div class="category-content no-padding">
+          <ul class="navigation navigation-main navigation-accordion">
+            <!-- Main -->
+            <li class="navigation-header">
+              <i class="icon-menu" title="Main pages"></i>
+            </li>
 
-                    <router-link to="/"
-                        tag="li">
-                        <a>
-                            <i class="icon-home4"></i>
-                            <span>Início</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/gerencial/dashboard"
-                        tag="li">
-                        <a>
-                            <i class="icon-graph"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </router-link>
-                    <!-- <router-link to="/desafios/inscrever"
+            <router-link to="/" tag="li">
+              <a>
+                <i class="icon-home4"></i>
+                <span>Início</span>
+              </a>
+            </router-link>
+            <router-link to="/gerencial/dashboard" tag="li">
+              <a>
+                <i class="icon-graph"></i>
+                <span>Dashboard</span>
+              </a>
+            </router-link>
+            <!-- <router-link to="/desafios/inscrever"
                         tag="li">
                         <a>
                             <i class="icon-users4"></i>
                             <span>inscrever em desafio - S</span>
                         </a>
-                    </router-link> -->
-                    <router-link to="/desafios/listar"
-                        tag="li">
-                        <a>
-                            <i class="icon-puzzle"></i>
-                            <span>Desafios</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/empresa/premiacoes"
-                        tag="li">
-                        <a>
-                            <i class="icon-trophy3"></i>
-                            <span>Premiações</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/empresa/rank"
-                        tag="li">
-                        <a>
-                            <i class="icon-podium"></i>
-                            <span>Ranking</span>
-                        </a>
-                    </router-link>
-                    <router-link to="/perfil/visualizar"
-                        tag="li">
-                        <a>
-                            <i class="icon-brain"></i>
-                            <span>Perfil</span>
-                        </a>
-                    </router-link>
-                    
-                <!--
+            </router-link>-->
+            <router-link to="/desafios/listar" tag="li">
+              <a>
+                <i class="icon-puzzle"></i>
+                <span>Desafios</span>
+              </a>
+            </router-link>
+            <router-link to="/empresa/premiacoes" tag="li">
+              <a>
+                <i class="icon-trophy3"></i>
+                <span>Premiações</span>
+              </a>
+            </router-link>
+            <router-link to="/empresa/rank" tag="li">
+              <a>
+                <i class="icon-podium"></i>
+                <span>Ranking</span>
+              </a>
+            </router-link>
+            <router-link to="/perfil/visualizar" tag="li">
+              <a>
+                <i class="icon-brain"></i>
+                <span>Perfil</span>
+              </a>
+            </router-link>
+
+            <!--
                     <li>
                         <a href="#">
                             <i class="icon-hammer2"></i>
@@ -135,19 +125,37 @@
                             </router-link>
                         </ul>
                     </li>
-                -->
-                    <!-- /page kits -->
-                </ul>
-            </div>
+            -->
+            <!-- /page kits -->
+          </ul>
         </div>
-        <!-- /main navigation -->
+      </div>
+      <!-- /main navigation -->
     </div>
-</div>
-<!-- /main sidebar -->
+  </div>
+  <!-- /main sidebar -->
 </template>
 <script>
+    import axios from 'axios' 
 export default {
+  data() {
+    return { nome: null, cidade: null, imagem:null, estado:null, sobrenome:null }
+  },
+  async created () {
+      try {
+          const {data} = await axios.get('api/conteseuproblema/getUser')
+          console.log(data.data)
+          if (!data.error) {
+              this.nome = data.data[0].nome
+              this.sobrenome = data.data[0].sobrenome
+              this.cidade = data.data[0].cidade
+              this.estado = data.data[0].estado
+              this.imagem = data.data[0].img
 
-
+          }
+      } catch (error) {
+          console.log(error)
+      }
+  }
 }
 </script>
