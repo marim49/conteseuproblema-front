@@ -10,7 +10,7 @@
             <fieldset class="content-group">
               <legend class="text-semibold">Informações</legend>
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <control-wrapper label="Nome:">
                     <input
                       type="text"
@@ -21,14 +21,12 @@
                     />
                   </control-wrapper>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <control-wrapper label="Data expiração:">
                     <input type="date" class="form-control" disabled v-model="desafio.dataExpiracao" />
                   </control-wrapper>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <control-wrapper label="Prêmio:">
                     <input
                       type="text"
@@ -39,14 +37,14 @@
                     />
                   </control-wrapper>
                 </div>
-              </div>
-              <div class="row">
+              
+              
                 <div class="col-md-12">
                   <control-wrapper label="Descrição do desafio:">
                     <textarea
                       type="textarea"
                       class="form-control"
-                      v-model="desafio.requisitos"
+                      v-model="desafio.regras"
                       disabled
                     ></textarea>
                   </control-wrapper>

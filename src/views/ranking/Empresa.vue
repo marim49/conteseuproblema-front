@@ -12,7 +12,7 @@
 					<li class="media">
 						<div class="media-left media-middle">
 							<a href="#">
-								<img src="assets/images/leandro_modelo.jpeg" class="img-circle img-md" alt="">
+								<img v-bind:src="'assets/images/'+linha.img" class="img-circle img-md" alt="">
 							</a>
 						</div>
 
@@ -60,7 +60,8 @@ export default {
     async created() {
         try {
             this.showLoading()
-            let { data } = await axios.get('/api/conteseuproblema/getRanking')
+						let { data } = await axios.get('/api/conteseuproblema/getRanking')
+						console.log(data)
             this.tabela = data.data
 				}
 				catch(err){

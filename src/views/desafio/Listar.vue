@@ -37,7 +37,7 @@
                                 <td><div style="text-align: center; vertical-align: middle" class="align-middle">
                                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações">
                                             <router-link v-bind:to="'/desafios/inscrever/'+linha.id" class="btn btn-success icon-enter2" role="button" data-toggle="tooltip" data-placement="top" title="Entrar em desafio"></router-link>
-                                            <router-link v-bind:to="'/desafios/visualizar/'+linha.id" class="btn btn-primary icon-eye4" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
+                                            <router-link v-bind:to="'/desafios/visualizar/'+linha.id" class="btn btn-primary icon-eye4" role="button" data-toggle="tooltip" data-placement="top" title="Visualizar desafio"></router-link>
                                             <router-link v-bind:to="'/desafios/historico/'+linha.id" class="btn btn-info icon-bubbles10" role="button" data-toggle="tooltip" data-placement="top" title="Solucoes do desafio"></router-link>
                                             <router-link v-bind:to="'/desafios/editar/'+linha.id" class="btn btn-warning icon-pencil5" role="button" data-toggle="tooltip" data-placement="top" title="Editar desafio"></router-link>
                                             <button class="btn btn-danger icon-cancel-circle2" id="sweet_warning" role="button" data-toggle="tooltip" data-placement="top" title="Excluir desafio" v-on:click="deletar(linha.id)"></button>
