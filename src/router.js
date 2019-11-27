@@ -31,6 +31,10 @@ export default new Router({
 			component: require('@/views/desafio/Novo').default
 		},
 		{
+			path: '/login',
+			component: require('@/views/acesso/logar').default
+		},
+		{
 			path: '/desafios/inscrever/:id',
 			component: require('@/views/desafio/Inscrever').default
 		},
@@ -47,7 +51,7 @@ export default new Router({
 			component: require('@/views/desafio/HistoricoSolucao').default
 		},
 		{
-			path: '/desafios/resposta/:id/:idSolucionador',
+			path: '/desafios/resposta/:id',
 			component: require('@/views/desafio/Resposta').default
 		},
 		{

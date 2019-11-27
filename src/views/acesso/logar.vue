@@ -83,6 +83,7 @@ export default {
     },
     mounted() {
         let token = localStorage.token
+        console.log(token)
         if (token) {
             this.login(token)
         }
@@ -92,7 +93,7 @@ export default {
         async logar() {
             let { data } = await axios.post('/api/conteseuproblema/login', { user: this.cpf, password: this.password })
             localStorage.setItem('token', data.data)
-            this.login(data)
+            this.login(data.data)
         },
         cadastrar_user() {
             console.log('chamou')

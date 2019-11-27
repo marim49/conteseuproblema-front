@@ -1,153 +1,78 @@
 <template>
   <div>
     <page-header>
-      <span class="text-semibold">Desafio</span> - Inscrever
+      <span class="text-semibold">Enviar</span> - Desafio
     </page-header>
     <div class="content">
       <div class="panel panel-flat">
         <div class="panel-body">
-          <form class="steps-basic" action="#">
-            <h6>Informações do desafio</h6>
-            <fieldset>
+          <form class="form-horizontal">
+            <fieldset class="content-group">
+              <legend class="text-semibold">Informações</legend>
               <div class="row">
-                
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Nome do desafio:</label>
+                <div class="col-md-8">
+                  <control-wrapper label="Nome:">
                     <input
                       type="text"
-                      v-bind:value="nome"
-                      name="experience-company"
                       class="form-control"
+                      v-model="desafio.nome"
                       disabled
+                      placeholder="Insira o nome do desafio"
                     />
-                  </div>
-                  <div class="form-group">
-                    <label>Recompensa pelo desafio:</label>
-                    <input
-                      type="text"
-                      v-bind:value="premio"
-                      name="experience-company"
-                      class="form-control"
-                      disabled
-                    />
-                  </div>
-                  
-                  <div class="form-group">
-                    <label>Setor:</label>
-                    <select name="position" class="select" disabled>
-                      <option></option>
-                      <optgroup label="Developer Relations">
-                        <option value="1" selected>Desenvolvimento</option>
-                        <option value="2">Ads Solutions Consultant</option>
-                        <option value="3">Technical Solutions Consultant</option>
-                        <option value="4">Business Intern</option>
-                      </optgroup>
-
-                      <optgroup label="Engineering &amp; Design">
-                        <option value="5">Interaction Designer</option>
-                        <option value="6">Technical Program Manager</option>
-                        <option value="7">Software Engineer</option>
-                        <option value="8">Information Security Engineer</option>
-                      </optgroup>
-
-                      <optgroup label="Marketing &amp; Communications">
-                        <option value="13">Media Outreach Manager</option>
-                        <option value="14">Research Manager</option>
-                        <option value="15">Marketing Intern</option>
-                        <option value="16">Business Intern</option>
-                      </optgroup>
-
-                      <optgroup label="Sales Operations">
-                        <option value="17">Sales Operations Analyst</option>
-                        <option value="18">Technology Product Manager</option>
-                        <option value="19">Product Expert</option>
-                        <option value="20">Sales Insights Analyst</option>
-                        <option value="21">Customer Operations Analyst</option>
-                      </optgroup>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <!--<div class="form-group">
-                    <label>Regras:</label>
-                    <textarea
-                      name="experience-position"
-                      placeholder="Company name"
-                      class="form-control"
-                      rows="4"
-                      cols="3"
-                      readonly>Desenvolver uma solução para realizar uma compra de vários itens no carrinho através de diversos meios de pagamento. Link para o código fonte do projeto: https://github.com/marim49/green-box
-                    </textarea>
-                    
-                  </div>-->
-                  <div class="form-group">
-                    <label>Descrição:</label>
-                    <textarea readonly
-                      name="experience-description"
-                      rows="2"
-                      cols="3"
-                      class="form-control"
-                      v-bind:value="requisitos"
-                    >
-                    </textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Data de expiração:</label>
-                    <input
-                      type="text"
-                      v-bind:value="dataExpiracao"
-                      name="experience-company"
-                      class="form-control"
-                      disabled
-                    />
-                  </div>
+                  </control-wrapper>
                 </div>
               </div>
-            </fieldset>
-
-            <h6>Enviar solução</h6>
-            <fieldset>
               <div class="row">
-                  <div class="form-group">
-                    <label>Descrição sobre a solução realizada:</label>
-                    <textarea
-                      name="experience-description"
-                      rows="4"
-                      cols="4"
-                      placeholder="Insira aqui um preve resumo sobre a solução criada, e se você precisou de mais integrantes, nos informe"
+                <div class="col-md-8">
+                  <control-wrapper label="Data expiração:">
+                    <input type="date" class="form-control" disabled v-model="desafio.dataExpiracao" />
+                  </control-wrapper>
+                </div>
+                <div class="col-md-4">
+                  <control-wrapper label="Prêmio:">
+                    <input
+                      type="text"
                       class="form-control"
+                      disabled
+                      placeholder="Insira aqui o prêmio para o desafio"
+                      v-model="desafio.premio"
+                    />
+                  </control-wrapper>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <control-wrapper label="Descrição do desafio:">
+                    <textarea
+                      type="textarea"
+                      class="form-control"
+                      v-model="desafio.requisitos"
+                      disabled
                     ></textarea>
-                  </div>
+                  </control-wrapper>
+                </div>
               </div>
             </fieldset>
-
-            <h6>Resultado avaliação</h6>
             <fieldset>
-              <div class="panel panel-default">
-							<div class="panel-heading">
-								<h6 class="panel-title">Resultado</h6>
-								<div class="heading-elements">
-									<span class="heading-text"><i class="icon-spinner2 spinner"></i></span>
-									<div class="progress progress-xxs">
-										<div class="progress-bar progress-bar-warning" style="width: 60%;">
-											<span class="sr-only">60% Complete</span>
-										</div>
-									</div>
-			                	</div>
-							</div>
-							
-							<div class="panel-body">
-                O gestor irá avaliar a sua solução, em breve. Agradecemos sua colaboração
-							</div>
-						</div>
+              <legend>Envie sua solução:</legend>
+              <div class="row">
+                <div class="col-sd-8">
+                  <control-wrapper label="Solução para o desafio:">
+                    <textarea class="form-control" placeholder="Insira aqui sua solução para o problema" v-model="solucao"></textarea>
+                  </control-wrapper>
+                </div>
+              </div>
             </fieldset>
+            <div class="text-right">
+              <a @click="enviarSolucao" class="btn btn-success">
+                Enviar
+                <i class="icon-arrow-right14 position-right"></i>
+              </a>
+            </div>
           </form>
         </div>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -159,42 +84,47 @@ import moment from "moment";
 export default {
   data() {
     return {
-      nome: null,
-      setor: null,
-      requisitos: null,
-      premio: null,
-      dataExpiracao: null
-    };
+      desafio: {
+        nome: null,
+        setor: null,
+        requisitos: null,
+        premio: null,
+        dataExpiracao: null
+      },
+      solucao: null
+    }
   },
   async created() {
     try {
-      const {data} = await axios.get('/api/conteseuproblema/retornaProblema/'+this.$route.params.id)
+      const { data } = await axios.get("/api/conteseuproblema/retornaProblema/" + this.$route.params.id)
+      console.log(data)
       if (!data.error) {
-          this.nome = (data.data[0].desc) ? data.data[0].desc : '',
-          this.setor= data.data[0].setor,
-          this.requisitos= data.data[0].requisitos,
-          this.dataExpiracao = moment(data.data[0].prazo).format("YYYY-MM-DD"),
-          this.premio = data.data[0].premiacao
+        this.desafio.nome = data.data[0].desc ? data.data[0].desc : "",
+        this.desafio.setor = data.data[0].setor,
+        this.desafio.requisitos = data.data[0].requisitos,
+        this.desafio.dataExpiracao = moment(data.data[0].prazo).format("YYYY-MM-DD"),
+        this.desafio.premio = data.data[0].premiacao
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   },
   methods: {
-    async save() {
-      console.log(saveData);
+    async enviarSolucao() {
       try {
-        let { data } = await axios.post("/api/desafio/create", saveData);
-        if (data.success) {
-          this.$router.push("/desafios");
+        console.log(this.$route.params.id)
+        let { data } = await axios.post("/api/conteseuproblema/cadastraSolucao/"+this.$route.params.id,{descSolucao: this.solucao} );
+        if (!data.error) {
+          this.$swal.fire({type:'success', text: data.msg, timer:1200})
+          setTimeout(()=>{
+            this.$router.push("/desafios/listar")
+          },1500)
         } else {
-          console.log("error");
-          PNotify.error(data.message);
-          this.hideLoading();
+          this.$swal.fire({type:'erro', text: data.msg, timer:1200})
         }
       } catch (err) {
+        this.$swal.fire({type:'erro', text: data.msg, timer:1200})
         console.log(err);
-        PNotify.error("Erro ao salvar os dados");
         this.hideLoading();
       }
     }

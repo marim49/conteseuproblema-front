@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a @click="deslogar">
                             <i class="icon-switch2"></i> Sair
                         </a>
                     </li>
@@ -96,6 +96,15 @@ export default {
       } catch (error) {
           console.log(error)
       }
-  }
+  },
+  methods:{
+       deslogar() { 
+           console.log('entrou aqui')
+            localStorage.removeItem('token')
+            setTimeout(()=>{
+                location.reload()
+            },500)
+      }
+  }  
 }
 </script>

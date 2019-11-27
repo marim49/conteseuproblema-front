@@ -8,14 +8,8 @@
         <div class="panel-body">
             <div class="border-top-blue">
                 <ul class="list-feed">
-					<li class="border-success-400">
-					O solucionador <a href="#">	Leandro Marim </a> respondeu ao desafio <router-link to="/desafios/resposta/1/1" >desafio e-commerce </router-link>
-					</li>
-                    <li class="border-success-400">
-					O solucionador <a href="#">	Israel Severino </a> respondeu ao desafio <a href="#">desafio e-commerce </a>
-					</li>
-                    <li class="border-success-400">
-					O solucionador <a href="#">	Julio Rock </a> respondeu ao desafio <a href="#">desafio e-commerce </a>
+					<li class="border-success-400" v-for="solucao in solucoesDesafio" :key="solucao.coment_id">
+					O solucionador <b>{{solucao.tbl_login_log_usr}}</b> respondeu ao desafio <router-link v-bind:to="'/desafios/resposta/'+desafio.id" >{{desafio.desc}} </router-link>
 					</li>
 				</ul>
 		    </div>
@@ -33,42 +27,24 @@ import moment from 'moment'
 export default {
     data(){
         return{
-            nome_desafio: null,
-            setor: null,
-            regras: null,
-            requisitos: null,
-            premio: null,
-            data_expiracao: null
+            solucoesDesafio:[],
+            desafio:[]
         } 
+    },
+    async mounted(){
+        try {
+            const {data} = await axios.get('/api/conteseuproblema/retornaProblema/'+this.$route.params.id)
+            if (!data.error) {
+                this.solucoesDesafio = (data.data[0].solucoes.length > 0) ? data.data[0].solucoes : null,
+                this.desafio = data.data[0]
+            }
+        } catch (error) {
+            console.log(error)
+        }
     },
     methods: {
         async save() {
-            let saveData = {
-                nome_desafio: this.nome_desafio,
-                setor: this.setor,
-                regras: this.regras,
-                requisitos: this.requisitos,
-                premio: this.premio,
-                data_expiracao: this.data_expiracao,
-                data_criacao: new Date().toJSON().slice(0, 10)
-
-                
-            }
-            console.log(saveData)
-            try {
-                let { data }  = await axios.post('/api/desafio/create', saveData)
-                if (data.success) {
-                    this.$router.push('/desafios')
-                } else {
-                    console.log('error')
-                    PNotify.error(data.message)
-                    this.hideLoading()
-                }
-            } catch (err) {
-                console.log(err)
-                PNotify.error('Erro ao salvar os dados')
-                this.hideLoading()
-            }
+            
         },
     }
 }
