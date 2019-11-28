@@ -84,6 +84,7 @@ export default {
                     const {data} = await axios.delete('/api/conteseuproblema/deletarProblema/'+id)
                     if (!data.error) {
                         this.$swal.fire({text: data.msg, type: 'success', timer:1200})
+                        location.reload(true)
                     } else {
                         this.$swal.fire({text: data.msg, type: 'error', timer:1200})
                     }

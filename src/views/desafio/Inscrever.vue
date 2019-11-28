@@ -15,7 +15,7 @@
                     <input
                       type="text"
                       class="form-control"
-                      v-model="desafio.nome"
+                      v-model="desafio.nomeDesafio"
                       disabled
                       placeholder="Insira o nome do desafio"
                     />
@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       desafio: {
-        nome: null,
+        nomeDesafio: null,
         setor: null,
         requisitos: null,
         premio: null,
@@ -97,7 +97,7 @@ export default {
       const { data } = await axios.get("/api/conteseuproblema/retornaProblema/" + this.$route.params.id)
       console.log(data)
       if (!data.error) {
-        this.desafio.nome = data.data[0].desc ? data.data[0].desc : "",
+        this.desafio.nomeDesafio = data.data[0].desc ? data.data[0].desc : "",
         this.desafio.setor = data.data[0].setor,
         this.desafio.requisitos = data.data[0].requisitos,
         this.desafio.dataExpiracao = moment(data.data[0].prazo).format("YYYY-MM-DD"),

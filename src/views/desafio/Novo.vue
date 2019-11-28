@@ -91,13 +91,13 @@ export default {
     methods: {
         async save() {
             let saveData = {
-                nome_desafio: this.nome_desafio,
+                nomeDesafio: this.nome_desafio,
                 setor: this.setor,
                 regras: this.regras,
                 requisitos: this.requisitos,
                 premio: this.premio,
-                data_expiracao: moment(this.data_expiracao).format('YYYY-MM-DD'),
-                data_criacao: moment().format('YYYY-MM-DD')
+                dataExpiracao: moment(this.data_expiracao).format('YYYY-MM-DD'),
+                dataCriacao: moment().format('YYYY-MM-DD')
 
                 
             }

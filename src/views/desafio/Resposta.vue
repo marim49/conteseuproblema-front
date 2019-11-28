@@ -23,7 +23,7 @@
 						</div>
 						<div class="media-right">
 							<a href="assets/images/placeholder.jpg">
-								<img src="../../../public/assets/images/leandro_modelo.jpeg" class="img-circle img-md" alt="">
+								<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
 							</a>
 						</div>
 					</li>
